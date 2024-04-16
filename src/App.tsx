@@ -23,5 +23,5 @@ export default function App() {
     <div className='App'>
       <Home />
     </div>
-  )
+  );
 }
