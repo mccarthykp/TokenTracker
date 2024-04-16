@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 // Dark Mode Script
 import { applyTheme } from "./utils/themeUtils";
 // Visibility Script
@@ -20,10 +20,8 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <div className='App'>
-        <Home />
-      </div>
-    </>
+    <div className='App'>
+      <Home />
+    </div>
   )
 }
