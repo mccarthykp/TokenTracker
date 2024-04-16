@@ -90,7 +90,7 @@ const CoinTable: React.FunctionComponent = () => {
     <div>
       <table>
         <thead>
-          <tr className="text-gray-300 text-left select-none">
+          <tr className="text-slate-300 text-left select-none">
             <th
               className="pr-8 underline underline-offset-4 decoration-2 flex ml-8"
               onClick={() => handleSort("")}
@@ -105,7 +105,7 @@ const CoinTable: React.FunctionComponent = () => {
                 <span
                   className={
                     sortBy.filter === "price"
-                      ? "underline underline-offset-4 decoration-2 text-gray-500"
+                      ? "underline underline-offset-4 decoration-2 text-slate-500"
                       : "underline underline-offset-4 decoration-2"
                   }
                 >
@@ -122,7 +122,7 @@ const CoinTable: React.FunctionComponent = () => {
                 <span
                   className={
                     sortBy.filter === "market-cap"
-                      ? "underline underline-offset-4 decoration-2 text-gray-500"
+                      ? "underline underline-offset-4 decoration-2 text-slate-500"
                       : "underline underline-offset-4 decoration-2"
                   }
                 >
@@ -139,7 +139,7 @@ const CoinTable: React.FunctionComponent = () => {
                 <span
                   className={
                     sortBy.filter === "24h"
-                      ? "underline underline-offset-4 decoration-2 text-gray-500"
+                      ? "underline underline-offset-4 decoration-2 text-slate-500"
                       : "underline underline-offset-4 decoration-2"
                   }
                 >
@@ -153,7 +153,7 @@ const CoinTable: React.FunctionComponent = () => {
         <tbody>
           {sortedCoins.map((coin, index) => (
             <tr key={coin.id}>
-              <td className="pr-8 pt-1 text-gray-400">
+              <td className="pr-8 pt-1 text-slate-400">
                 <span
                   className={
                     index < 9
@@ -171,14 +171,14 @@ const CoinTable: React.FunctionComponent = () => {
                   height="20"
                 ></img>
                 {coin.name}{" "}
-                <span className="text-gray-600">
+                <span className="text-slate-600">
                   {coin.symbol.toUpperCase()}
                 </span>
               </td>
-              <td className="pr-8 pt-1 text-gray-400">
+              <td className="pr-8 pt-1 text-slate-400">
                 ${coin.current_price.toFixed(2)}
               </td>
-              <td className="pr-8 pt-1 text-gray-400">
+              <td className="pr-8 pt-1 text-slate-400">
                 ${coin.market_cap.toLocaleString()}
               </td>
               <td
