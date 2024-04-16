@@ -92,13 +92,7 @@ const CoinTable: React.FunctionComponent = () => {
         <thead>
           <tr className="text-gray-300 text-left select-none">
             <th
-              className="pr-8 underline underline-offset-4 decoration-2"
-              onClick={() => handleSort("")}
-            >
-              Rank
-            </th>
-            <th
-              className="pr-8 underline underline-offset-4 decoration-2"
+              className="pr-8 underline underline-offset-4 decoration-2 flex ml-8"
               onClick={() => handleSort("")}
             >
               Coin
@@ -159,10 +153,16 @@ const CoinTable: React.FunctionComponent = () => {
         <tbody>
           {sortedCoins.map((coin, index) => (
             <tr key={coin.id}>
-              <td className="pr-8 pt-1 text-gray-400 select-none">
-                {index + 1}
-              </td>
               <td className="pr-8 pt-1 text-gray-400">
+                <span
+                  className={
+                    index < 9
+                    ? "mr-5"
+                    : "mr-3"
+                  }
+                >
+                  {index + 1}.
+                </span>
                 <img
                   className="inline mr-3 select-none"
                   src={coin.image}
