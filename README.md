@@ -6,6 +6,7 @@ Please leave a :star: if you like it!
 
 ## Try it out
 The project is live [here](https://mccarthykp.github.io/TokenTracker/).
+
 If you find any **errors** :no_entry:, please report them to **portfolio.errors@proton.me**
 
 ## Technologies
