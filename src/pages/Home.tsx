@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-      <section className="lg:w-auto px-14 bg-gray-200 dark:bg-gray-900 min-h-screen flex flex-col items-center">
+      <section className="lg:w-auto py-8 bg-gray-200 dark:bg-gray-900 min-h-screen flex flex-col items-center">
         <Header />
         <CoinTable />
         <Footer />
