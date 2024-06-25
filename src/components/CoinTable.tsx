@@ -157,8 +157,8 @@ const CoinTable: React.FunctionComponent = () => {
                   onChange={(e) => setSelectedOption(e.target.value)}
                   className="p-1 bg-slate-400 border-none outline-none rounded-md md:text-sm"
                 >
+                  <option className="text-slate-900 font-medium" value="market-cap">Market Cap</option>
                   <option className="text-slate-900 font-medium" value="price">Price (USD)</option>
-                  <option className="text-slate-900 font-medium" value="market-cap">Market Cap (USD)</option>
                   <option className="text-slate-900 font-medium" value="24h">24h Change</option>
                 </select>
               </div>
