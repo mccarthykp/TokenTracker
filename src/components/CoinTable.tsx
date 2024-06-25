@@ -89,7 +89,7 @@ const CoinTable: React.FunctionComponent = () => {
 
   return (
     <section className="text-xs md:text-base">
-      <table className="min-w-[345px]">
+      <table className="min-w-[355px]">
         <thead>
           <tr className="text-slate-300 text-left select-none">
             <th
