@@ -68,7 +68,7 @@ const CoinTable: React.FunctionComponent = () => {
 
   // Function to handle sorting when a filter is clicked
   const handleSort = (filter: string) => {
-    if (["price", "market-cap", "24h"].includes(filter)) {
+    if (["market-cap", "price", "24h"].includes(filter)) {
       setSortBy((prevState) => {
         if (prevState.filter === filter) {
           return { ...prevState, ascending: !prevState.ascending };
