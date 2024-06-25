@@ -50,11 +50,11 @@ const CoinTable: React.FunctionComponent = () => {
   const sortedCoins = coins.slice().sort((a, b) => {
     let comparison = 0;
     switch (sortBy.filter) {
-      case "price":
-        comparison = a.current_price - b.current_price;
-        break;
       case "market-cap":
         comparison = a.market_cap - b.market_cap;
+        break;
+      case "price":
+        comparison = a.current_price - b.current_price;
         break;
       case "24h":
         comparison =
