@@ -22,6 +22,7 @@ const CoinTable: React.FunctionComponent = () => {
     filter: "",
     ascending: true,
   });
+  const [selectedOption, setSelectedOption] = useState<string>("price");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -87,26 +88,26 @@ const CoinTable: React.FunctionComponent = () => {
   };
 
   return (
-    <div>
-      <table>
+    <div className="text-xs md:text-base">
+      <table className="w-full">
         <thead>
           <tr className="text-slate-300 text-left select-none">
             <th
-              className="pr-8 underline underline-offset-4 decoration-2 flex ml-8"
+              className="pr-8 underline underline-offset-4 decoration-2 flex md:table-cell"
               onClick={() => handleSort("")}
             >
               Coin
             </th>
-            <th className="pr-8">
+            <th className="pr-8 hidden md:table-cell">
               <span
                 onClick={() => handleSort("price")}
                 className="cursor-pointer"
               >
                 <span
-                  className={
-                    sortBy.filter === "price"
-                      ? "underline underline-offset-4 decoration-2 text-slate-500"
-                      : "underline underline-offset-4 decoration-2"
+                  className={`
+                    underline underline-offset-4 decoration-2
+                    ${sortBy.filter === "price" ? "text-slate-500" : ""
+                    }`
                   }
                 >
                   Price (USD)
@@ -114,16 +115,16 @@ const CoinTable: React.FunctionComponent = () => {
                 {renderArrow("price")}
               </span>
             </th>
-            <th className="pr-8">
+            <th className="pr-8 hidden md:table-cell">
               <span
                 onClick={() => handleSort("market-cap")}
                 className="cursor-pointer"
               >
                 <span
-                  className={
-                    sortBy.filter === "market-cap"
-                      ? "underline underline-offset-4 decoration-2 text-slate-500"
-                      : "underline underline-offset-4 decoration-2"
+                  className={`
+                    underline underline-offset-4 decoration-2
+                    ${sortBy.filter === "market-cap" ? "text-slate-500" : ""
+                    }`
                   }
                 >
                   Market Cap (USD)
@@ -131,16 +132,16 @@ const CoinTable: React.FunctionComponent = () => {
                 {renderArrow("market-cap")}
               </span>
             </th>
-            <th className="pr-8">
+            <th className="pr-8 hidden md:table-cell">
               <span
                 onClick={() => handleSort("24h")}
                 className="cursor-pointer"
               >
                 <span
-                  className={
-                    sortBy.filter === "24h"
-                      ? "underline underline-offset-4 decoration-2 text-slate-500"
-                      : "underline underline-offset-4 decoration-2"
+                  className={`
+                    underline underline-offset-4 decoration-2
+                    ${sortBy.filter === "24h" ? "text-slate-500" : ""
+                    }`
                   }
                 >
                   24h
@@ -148,19 +149,27 @@ const CoinTable: React.FunctionComponent = () => {
                 {renderArrow("24h")}
               </span>
             </th>
+            <th>
+              <div className="flex justify-between text-slate-900 md:hidden">
+                <select
+                  id="data-select"
+                  value={selectedOption}
+                  onChange={(e) => setSelectedOption(e.target.value)}
+                  className="p-1 bg-slate-400 border-none outline-none rounded-md md:text-sm"
+                >
+                  <option className="text-slate-900 font-medium" value="price">Price (USD)</option>
+                  <option className="text-slate-900 font-medium" value="market-cap">Market Cap (USD)</option>
+                  <option className="text-slate-900 font-medium" value="24h">24h Change</option>
+                </select>
+              </div>
+            </th>
           </tr>
         </thead>
         <tbody>
           {sortedCoins.map((coin, index) => (
-            <tr key={coin.id}>
-              <td className="pr-8 pt-1 text-slate-400">
-                <span
-                  className={
-                    index < 9
-                    ? "mr-5"
-                    : "mr-3"
-                  }
-                >
+            <tr key={coin.id} className="border-b border-slate-800">
+              <td className="pr-8 py-2 text-slate-400">
+                <span className={index < 9 ? "mr-5" : "mr-3"}>
                   {index + 1}.
                 </span>
                 <img
@@ -175,20 +184,41 @@ const CoinTable: React.FunctionComponent = () => {
                   {coin.symbol.toUpperCase()}
                 </span>
               </td>
-              <td className="pr-8 pt-1 text-slate-400">
+              <td className="pr-8 pt-1 text-slate-400 hidden md:table-cell">
                 ${coin.current_price.toFixed(2)}
               </td>
-              <td className="pr-8 pt-1 text-slate-400">
+              <td className="pr-8 pt-1 text-slate-400 hidden md:table-cell">
                 ${coin.market_cap.toLocaleString()}
               </td>
               <td
                 className={
-                  coin.price_change_percentage_24h > 0
+                  `hidden md:table-cell
+                  ${coin.price_change_percentage_24h > 0
                     ? "text-green-500"
                     : "text-red-500"
+                  }`
                 }
               >
                 {coin.price_change_percentage_24h.toFixed(2)}%
+              </td>
+              <td className="md:pr-8 pt-1 text-slate-400 md:hidden text-right">
+                {selectedOption === "price" && (
+                  <>${coin.current_price.toFixed(2)}</>
+                )}
+                {selectedOption === "market-cap" && (
+                  <>${coin.market_cap.toLocaleString()}</>
+                )}
+                {selectedOption === "24h" && (
+                  <span
+                    className={
+                      coin.price_change_percentage_24h > 0
+                        ? "text-green-500"
+                        : "text-red-500"
+                    }
+                  >
+                    {coin.price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                )}
               </td>
             </tr>
           ))}
