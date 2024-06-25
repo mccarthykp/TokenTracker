@@ -88,7 +88,7 @@ const CoinTable: React.FunctionComponent = () => {
   };
 
   return (
-    <section className="text-xs md:text-base">
+    <section className="lg:w-auto pt-8 px-10 bg-gray-200 dark:bg-gray-900 flex flex-col items-center text-xs md:text-base">
       <table className="min-w-[355px]">
         <thead>
           <tr className="text-slate-800 dark:text-slate-300 text-left select-none">
@@ -155,7 +155,7 @@ const CoinTable: React.FunctionComponent = () => {
                   id="data-select"
                   value={selectedOption}
                   onChange={(e) => setSelectedOption(e.target.value)}
-                  className="p-1 bg-zinc-950 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
+                  className="p-1 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
                 >
                   <option className="text-slate-400 dark:text-slate-900 font-medium" value="market-cap">Market Cap</option>
                   <option className="text-slate-400 dark:text-slate-900 font-medium" value="price">Price (USD)</option>
@@ -186,11 +186,15 @@ const CoinTable: React.FunctionComponent = () => {
                   {coin.symbol.toUpperCase()}
                 </span>
               </td>
-              <td className="pr-8 pt-1 text-slate-800 dark:text-slate-400 hidden md:table-cell">
-                ${coin.market_cap.toLocaleString()}
+              <td className="pr-8 pt-1 hidden md:table-cell">
+                <span className="text-slate-800 dark:text-slate-400">
+                  ${coin.market_cap.toLocaleString()}
+                </span>
               </td>
-              <td className="pr-8 pt-1 text-slate-800 dark:text-slate-400 hidden md:table-cell">
-                ${coin.current_price.toFixed(2)}
+              <td className="pr-8 pt-1 hidden md:table-cell">
+                <span className="text-slate-800 dark:text-slate-400">
+                  ${coin.current_price.toFixed(2)}
+                </span>
               </td>
               <td
                 className={
