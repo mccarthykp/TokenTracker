@@ -202,11 +202,11 @@ const CoinTable: React.FunctionComponent = () => {
                 {coin.price_change_percentage_24h.toFixed(2)}%
               </td>
               <td className="md:pr-8 pt-1 text-slate-400 md:hidden text-right">
-                {selectedOption === "price" && (
-                  <>${coin.current_price.toFixed(2)}</>
-                )}
                 {selectedOption === "market-cap" && (
                   <>${coin.market_cap.toLocaleString()}</>
+                )}
+                {selectedOption === "price" && (
+                  <>${coin.current_price.toFixed(2)}</>
                 )}
                 {selectedOption === "24h" && (
                   <span
