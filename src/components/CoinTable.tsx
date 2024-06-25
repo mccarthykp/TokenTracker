@@ -150,12 +150,12 @@ const CoinTable: React.FunctionComponent = () => {
               </span>
             </th>
             <th>
-              <div className="flex text-slate-900 md:hidden justify-end">
+              <div className="flex text-slate-400 dark:text-slate-900 md:hidden justify-end">
                 <select
                   id="data-select"
                   value={selectedOption}
                   onChange={(e) => setSelectedOption(e.target.value)}
-                  className="p-1 bg-slate-400 border-none outline-none rounded-md md:text-sm"
+                  className="p-1 bg-slate-800 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
                 >
                   <option className="text-slate-900 font-medium" value="market-cap">Market Cap</option>
                   <option className="text-slate-900 font-medium" value="price">Price (USD)</option>
@@ -167,7 +167,7 @@ const CoinTable: React.FunctionComponent = () => {
         </thead>
         <tbody>
           {sortedCoins.map((coin, index) => (
-            <tr key={coin.id} className="border-b border-slate-800">
+            <tr key={coin.id} className="border-b border-slate-400 dark:border-slate-800">
               <td className="pr-8 py-2 text-slate-800 dark:text-slate-400">
                 <span className={index < 9 ? "mr-5" : "mr-3"}>
                   {index + 1}.
@@ -182,7 +182,7 @@ const CoinTable: React.FunctionComponent = () => {
                 <span className="text-slate-800 dark:text-slate-400">
                   {coin.name}{" "}
                 </span>
-                <span className="text-slate-500 dark:text-slate-600">
+                <span className="text-slate-400 dark:text-slate-600">
                   {coin.symbol.toUpperCase()}
                 </span>
               </td>
