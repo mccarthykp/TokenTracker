@@ -150,16 +150,16 @@ const CoinTable: React.FunctionComponent = () => {
               </span>
             </th>
             <th>
-              <div className="flex text-slate-400 dark:text-slate-900 md:hidden justify-end">
+              <div className="flex text-slate-200 dark:text-slate-900 md:hidden justify-end">
                 <select
                   id="data-select"
                   value={selectedOption}
                   onChange={(e) => setSelectedOption(e.target.value)}
-                  className="p-1 bg-slate-800 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
+                  className="p-1 bg-zinc-950 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
                 >
-                  <option className="text-slate-900 font-medium" value="market-cap">Market Cap</option>
-                  <option className="text-slate-900 font-medium" value="price">Price (USD)</option>
-                  <option className="text-slate-900 font-medium" value="24h">24h Change</option>
+                  <option className="text-slate-400 dark:text-slate-900 font-medium" value="market-cap">Market Cap</option>
+                  <option className="text-slate-400 dark:text-slate-900 font-medium" value="price">Price (USD)</option>
+                  <option className="text-slate-400 dark:text-slate-900 font-medium" value="24h">24h Change</option>
                 </select>
               </div>
             </th>
