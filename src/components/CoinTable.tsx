@@ -19,10 +19,10 @@ interface SortState {
 const CoinTable: React.FunctionComponent = () => {
   const [coins, setCoins] = useState<Coin[]>([]);
   const [sortBy, setSortBy] = useState<SortState>({
-    filter: "market-cap",  // Default to sorting by market-cap
-    ascending: true,
+    filter: "market-cap",  // Default to sorting by market cap
+    ascending: false,  // Default to descending order
   });
-  const [selectedOption, setSelectedOption] = useState<string>("market-cap");  // Default to market-cap
+  const [selectedOption, setSelectedOption] = useState<string>("market-cap");  // Default to market cap
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,8 +57,7 @@ const CoinTable: React.FunctionComponent = () => {
         comparison = a.current_price - b.current_price;
         break;
       case "24h":
-        comparison =
-          a.price_change_percentage_24h - b.price_change_percentage_24h;
+        comparison = a.price_change_percentage_24h - b.price_change_percentage_24h;
         break;
       default:
         break;
@@ -73,7 +72,7 @@ const CoinTable: React.FunctionComponent = () => {
         if (prevState.filter === filter) {
           return { ...prevState, ascending: !prevState.ascending };
         } else {
-          return { filter, ascending: true };
+          return { filter, ascending: false };  // Default to descending when changing filter
         }
       });
     }
