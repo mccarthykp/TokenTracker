@@ -185,10 +185,10 @@ const CoinTable: React.FunctionComponent = () => {
                 </span>
               </td>
               <td className="pr-8 pt-1 text-slate-400 hidden md:table-cell">
-                ${coin.current_price.toFixed(2)}
+                ${coin.market_cap.toLocaleString()}
               </td>
               <td className="pr-8 pt-1 text-slate-400 hidden md:table-cell">
-                ${coin.market_cap.toLocaleString()}
+                ${coin.current_price.toFixed(2)}
               </td>
               <td
                 className={
