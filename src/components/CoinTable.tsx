@@ -91,7 +91,7 @@ const CoinTable: React.FunctionComponent = () => {
     <section className="text-xs md:text-base">
       <table className="min-w-[355px]">
         <thead>
-          <tr className="text-slate-300 text-left select-none">
+          <tr className="text-slate-800 dark:text-slate-300 text-left select-none">
             <th
               className="pl-8 underline underline-offset-4 decoration-2 flex md:table-cell"
               onClick={() => handleSort("")}
@@ -168,7 +168,7 @@ const CoinTable: React.FunctionComponent = () => {
         <tbody>
           {sortedCoins.map((coin, index) => (
             <tr key={coin.id} className="border-b border-slate-800">
-              <td className="pr-8 py-2 text-slate-400">
+              <td className="pr-8 py-2 text-slate-800 dark:text-slate-400">
                 <span className={index < 9 ? "mr-5" : "mr-3"}>
                   {index + 1}.
                 </span>
@@ -179,23 +179,25 @@ const CoinTable: React.FunctionComponent = () => {
                   width="20"
                   height="20"
                 ></img>
-                {coin.name}{" "}
-                <span className="text-slate-600">
+                <span className="text-slate-800 dark:text-slate-400">
+                  {coin.name}{" "}
+                </span>
+                <span className="text-slate-500 dark:text-slate-600">
                   {coin.symbol.toUpperCase()}
                 </span>
               </td>
-              <td className="pr-8 pt-1 text-slate-400 hidden md:table-cell">
+              <td className="pr-8 pt-1 text-slate-800 dark:text-slate-400 hidden md:table-cell">
                 ${coin.market_cap.toLocaleString()}
               </td>
-              <td className="pr-8 pt-1 text-slate-400 hidden md:table-cell">
+              <td className="pr-8 pt-1 text-slate-800 dark:text-slate-400 hidden md:table-cell">
                 ${coin.current_price.toFixed(2)}
               </td>
               <td
                 className={
                   `hidden md:table-cell
                   ${coin.price_change_percentage_24h > 0
-                    ? "text-green-500"
-                    : "text-red-500"
+                    ? "text-green-700 dark:text-green-500"
+                    : "text-red-700 dark:text-red-500"
                   }`
                 }
               >
@@ -212,8 +214,8 @@ const CoinTable: React.FunctionComponent = () => {
                   <span
                     className={
                       coin.price_change_percentage_24h > 0
-                        ? "text-green-500"
-                        : "text-red-500"
+                        ? "text-green-700 dark:text-green-500"
+                        : "text-red-700 dark:text-red-500"
                     }
                   >
                     {coin.price_change_percentage_24h.toFixed(2)}%
