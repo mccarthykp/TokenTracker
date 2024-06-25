@@ -89,7 +89,7 @@ const CoinTable: React.FunctionComponent = () => {
 
   return (
     <div className="text-xs md:text-base">
-      <table className="w-full">
+      <table className="min-w-96">
         <thead>
           <tr className="text-slate-300 text-left select-none">
             <th
@@ -150,7 +150,7 @@ const CoinTable: React.FunctionComponent = () => {
               </span>
             </th>
             <th>
-              <div className="flex justify-between text-slate-900 md:hidden">
+              <div className="flex text-slate-900 md:hidden justify-end">
                 <select
                   id="data-select"
                   value={selectedOption}
