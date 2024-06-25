@@ -93,7 +93,7 @@ const CoinTable: React.FunctionComponent = () => {
         <thead>
           <tr className="text-slate-300 text-left select-none">
             <th
-              className="pr-8 underline underline-offset-4 decoration-2 flex md:table-cell"
+              className="pl-8 underline underline-offset-4 decoration-2 flex md:table-cell"
               onClick={() => handleSort("")}
             >
               Coin
