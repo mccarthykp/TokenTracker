@@ -100,23 +100,6 @@ const CoinTable: React.FunctionComponent = () => {
             </th>
             <th className="pr-8 hidden md:table-cell">
               <span
-                onClick={() => handleSort("price")}
-                className="cursor-pointer"
-              >
-                <span
-                  className={`
-                    underline underline-offset-4 decoration-2
-                    ${sortBy.filter === "price" ? "text-slate-500" : ""
-                    }`
-                  }
-                >
-                  Price (USD)
-                </span>{" "}
-                {renderArrow("price")}
-              </span>
-            </th>
-            <th className="pr-8 hidden md:table-cell">
-              <span
                 onClick={() => handleSort("market-cap")}
                 className="cursor-pointer"
               >
@@ -130,6 +113,23 @@ const CoinTable: React.FunctionComponent = () => {
                   Market Cap (USD)
                 </span>{" "}
                 {renderArrow("market-cap")}
+              </span>
+            </th>
+            <th className="pr-8 hidden md:table-cell">
+              <span
+                onClick={() => handleSort("price")}
+                className="cursor-pointer"
+              >
+                <span
+                  className={`
+                    underline underline-offset-4 decoration-2
+                    ${sortBy.filter === "price" ? "text-slate-500" : ""
+                    }`
+                  }
+                >
+                  Price (USD)
+                </span>{" "}
+                {renderArrow("price")}
               </span>
             </th>
             <th className="pr-8 hidden md:table-cell">
