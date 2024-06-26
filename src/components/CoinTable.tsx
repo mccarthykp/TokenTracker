@@ -154,11 +154,11 @@ const CoinTable: React.FunctionComponent = () => {
               </span>
             </th>
             <th>
-              <div className="flex text-slate-200 dark:text-slate-900 md:hidden justify-end items-center">
+              <div className="flex text-slate-400 dark:text-slate-900 md:hidden justify-end items-center">
                 <button
-                    onClick={handleSortOrderChange}
-                    className="mr-2 py-1 h-8 px-4 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md items-center font-medium"
-                  >
+                  onClick={handleSortOrderChange}
+                  className="mr-2 py-1 h-8 px-2 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md items-center font-bold"
+                >
                   {sortBy.ascending ? <span>ASC &uarr;</span> : <span>DESC &darr;</span>}
                 </button>
                 <select
@@ -168,11 +168,11 @@ const CoinTable: React.FunctionComponent = () => {
                     setSelectedOption(e.target.value);
                     handleSort(e.target.value);
                   }}
-                  className="flex py-1 px-4 h-8 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
+                  className="flex py-1 px-2 h-8 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
                 >
-                  <option className="text-slate-400 dark:text-slate-900 font-medium" value="market-cap">Market Cap</option>
-                  <option className="text-slate-400 dark:text-slate-900 font-medium" value="price">Price (USD)</option>
-                  <option className="text-slate-400 dark:text-slate-900 font-medium" value="24h">24h Change</option>
+                  <option value="market-cap">Market Cap</option>
+                  <option value="price">Price (USD)</option>
+                  <option value="24h">24h Change</option>
                 </select>
               </div>
             </th>
