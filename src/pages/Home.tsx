@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-    <div className="min-h-screen bg-gray-200 dark:bg-gray-900">
+    <div className="min-h-screen dark:bg-slate-800 bg-zinc-950">
       <Header />
       <CoinTable />
       <Footer />
