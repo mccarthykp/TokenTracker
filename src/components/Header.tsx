@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header: React.FunctionComponent = () => {
   return (
-    <header className='flex flex-col dark:bg-slate-800 px-10 bg-zinc-950 py-2 items-center text-left select-none'>
+    <header className='flex flex-col px-10 bg-zinc-950 dark:bg-slate-950 py-2 items-center text-left select-none'>
         <h1 className='text-2xl md:text-4xl text-slate-200 min-w-[355px]'>
           <a href='https://mccarthykp.github.io/TokenTracker/'>Crypto Market Tracker</a>
         </h1>
