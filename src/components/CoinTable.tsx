@@ -181,7 +181,7 @@ const CoinTable: React.FunctionComponent = () => {
         <tbody>
           {sortedCoins.map((coin, index) => (
             <tr key={coin.id} className="border-b border-slate-300 dark:border-slate-800">
-              <td className="pr-8 py-2 text-slate-800 dark:text-slate-400">
+              <td className="pr-4 py-2 text-slate-800 dark:text-slate-400">
                 <span className={`hidden md:inline-flex ${index < 9 ? "mr-4" : "mr-2"}`}>
                   {index + 1}.
                 </span>
@@ -195,7 +195,7 @@ const CoinTable: React.FunctionComponent = () => {
                 <span className="text-slate-800 dark:text-slate-400">
                   {coin.name}{" "}
                 </span>
-                <span className="text-slate-400 dark:text-slate-600">
+                <span className="text-xs text-slate-400 dark:text-slate-600">
                   {coin.symbol.toUpperCase()}
                 </span>
               </td>
