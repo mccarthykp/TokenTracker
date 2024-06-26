@@ -100,7 +100,7 @@ const CoinTable: React.FunctionComponent = () => {
         <thead>
           <tr className="text-slate-800 dark:text-slate-300 text-left select-none">
             <th
-              className="pl-8 underline underline-offset-4 decoration-2 flex md:table-cell"
+              className="pl-8 underline underline-offset-4 decoration-2 md:table-cell"
               onClick={() => handleSort("")}
             >
               Coin
@@ -162,7 +162,7 @@ const CoinTable: React.FunctionComponent = () => {
                     setSelectedOption(e.target.value);
                     handleSort(e.target.value);
                   }}
-                  className="p-1 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
+                  className="flex p-1 h-8 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
                 >
                   <option className="text-slate-400 dark:text-slate-900 font-medium" value="market-cap">Market Cap</option>
                   <option className="text-slate-400 dark:text-slate-900 font-medium" value="price">Price (USD)</option>
@@ -170,7 +170,7 @@ const CoinTable: React.FunctionComponent = () => {
                 </select>
                 <button
                   onClick={handleSortOrderChange}
-                  className="ml-2 py-1 px-4 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md"
+                  className="flex ml-2 py-1 h-8 px-4 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md items-center"
                 >
                   {sortBy.ascending ? <span>&uarr;</span> : <span>&darr;</span>}
                 </button>
