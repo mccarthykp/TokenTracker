@@ -154,12 +154,12 @@ const CoinTable: React.FunctionComponent = () => {
               </span>
             </th>
             <th>
-              <div className="flex text-slate-400 dark:text-slate-900 md:hidden justify-end items-center text-xs">
+              <div className="flex text-slate-400 dark:text-slate-900 md:hidden justify-end items-center">
                 <button
                   onClick={handleSortOrderChange}
                   className="mr-2 py-1 h-8 px-2 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md items-center font-bold"
                 >
-                  {sortBy.ascending ? <span>ASC &uarr;</span> : <span>DESC &darr;</span>}
+                  {sortBy.ascending ? <span>&uarr;</span> : <span>&darr;</span>}
                 </button>
                 <select
                   id="data-select"
@@ -195,7 +195,7 @@ const CoinTable: React.FunctionComponent = () => {
                 <span className="text-slate-800 dark:text-slate-400">
                   {coin.name}{" "}
                 </span>
-                <span className="text-xs text-slate-400 dark:text-slate-600">
+                <span className="text-slate-400 dark:text-slate-600">
                   {coin.symbol.toUpperCase()}
                 </span>
               </td>
