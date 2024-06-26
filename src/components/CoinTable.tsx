@@ -166,7 +166,7 @@ const CoinTable: React.FunctionComponent = () => {
         </thead>
         <tbody>
           {sortedCoins.map((coin, index) => (
-            <tr key={coin.id} className="border-b border-slate-200 dark:border-slate-800">
+            <tr key={coin.id} className="border-b border-slate-300 dark:border-slate-800">
               <td className="pr-8 py-2 text-slate-800 dark:text-slate-400">
                 <span className={index < 9 ? "mr-5" : "mr-3"}>
                   {index + 1}.
