@@ -87,7 +87,7 @@ const CoinTable: React.FunctionComponent = () => {
   };
 
   return (
-    <section className="lg:w-auto py-8 px-10 bg-gray-200 dark:bg-gray-900 flex flex-col items-center text-xs md:text-base">
+    <section className="lg:w-auto pt-10 px-10 bg-gray-200 dark:bg-gray-900 flex flex-col items-center text-xs md:text-base min-h-screen ">
       <table className="min-w-[355px]">
         <thead>
           <tr className="text-slate-800 dark:text-slate-300 text-left select-none">
@@ -206,7 +206,7 @@ const CoinTable: React.FunctionComponent = () => {
               >
                 {coin.price_change_percentage_24h.toFixed(2)}%
               </td>
-              <td className="md:pr-8 pt-1 text-slate-400 md:hidden text-right">
+              <td className="md:pr-8 pt-1 text-slate-800 dark:text-slate-400 md:hidden text-right">
                 {selectedOption === "market-cap" && (
                   <>${coin.market_cap.toLocaleString()}</>
                 )}
