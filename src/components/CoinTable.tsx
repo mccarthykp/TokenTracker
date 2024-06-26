@@ -86,8 +86,16 @@ const CoinTable: React.FunctionComponent = () => {
     return null;
   };
 
+  // Function to handle sorting order change from the mobile buttons
+  const handleSortOrderChange = () => {
+    setSortBy((prevState) => ({
+      ...prevState,
+      ascending: !prevState.ascending,
+    }));
+  };
+
   return (
-    <section className="lg:w-auto py-10 px-10 bg-gray-200 dark:bg-gray-900 flex flex-col items-center text-xs md:text-base min-h-screen ">
+    <section className="lg:w-auto py-10 px-10 bg-gray-200 dark:bg-gray-900 flex flex-col items-center text-xs md:text-base min-h-screen">
       <table className="min-w-[355px]">
         <thead>
           <tr className="text-slate-800 dark:text-slate-300 text-left select-none">
@@ -106,8 +114,7 @@ const CoinTable: React.FunctionComponent = () => {
                   className={`
                     underline underline-offset-4 decoration-2
                     ${sortBy.filter === "market-cap" ? "text-slate-500" : ""
-                    }`
-                  }
+                  }`}
                 >
                   Market Cap (USD)
                 </span>{" "}
@@ -123,8 +130,7 @@ const CoinTable: React.FunctionComponent = () => {
                   className={`
                     underline underline-offset-4 decoration-2
                     ${sortBy.filter === "price" ? "text-slate-500" : ""
-                    }`
-                  }
+                  }`}
                 >
                   Price (USD)
                 </span>{" "}
@@ -140,8 +146,7 @@ const CoinTable: React.FunctionComponent = () => {
                   className={`
                     underline underline-offset-4 decoration-2
                     ${sortBy.filter === "24h" ? "text-slate-500" : ""
-                    }`
-                  }
+                  }`}
                 >
                   24h
                 </span>{" "}
@@ -149,17 +154,26 @@ const CoinTable: React.FunctionComponent = () => {
               </span>
             </th>
             <th>
-              <div className="flex text-slate-200 dark:text-slate-900 md:hidden justify-end">
+              <div className="flex text-slate-200 dark:text-slate-900 md:hidden justify-end items-center">
                 <select
                   id="data-select"
                   value={selectedOption}
-                  onChange={(e) => setSelectedOption(e.target.value)}
-                  className="p-1 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
+                  onChange={(e) => {
+                    setSelectedOption(e.target.value);
+                    handleSort(e.target.value);
+                  }}
+                  className="px-1 py-2 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md md:text-sm"
                 >
                   <option className="text-slate-400 dark:text-slate-900 font-medium" value="market-cap">Market Cap</option>
                   <option className="text-slate-400 dark:text-slate-900 font-medium" value="price">Price (USD)</option>
                   <option className="text-slate-400 dark:text-slate-900 font-medium" value="24h">24h Change</option>
                 </select>
+                <button
+                  onClick={handleSortOrderChange}
+                  className="ml-2 py-2 px-4 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md"
+                >
+                  {sortBy.ascending ? <span>&#8673;</span> : <span>&#8675;</span>}
+                </button>
               </div>
             </th>
           </tr>
