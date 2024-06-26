@@ -157,9 +157,9 @@ const CoinTable: React.FunctionComponent = () => {
               <div className="flex text-slate-200 dark:text-slate-900 md:hidden justify-end items-center">
                 <button
                     onClick={handleSortOrderChange}
-                    className="mr-2 py-1 h-8 px-4 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md items-center"
+                    className="mr-2 py-1 h-8 px-4 bg-zinc-900 dark:bg-slate-400 border-none outline-none rounded-md items-center font-medium"
                   >
-                  {sortBy.ascending ? <span>&uarr;</span> : <span>&darr;</span>}
+                  {sortBy.ascending ? <span>ASC &uarr;</span> : <span>DESC &darr;</span>}
                 </button>
                 <select
                   id="data-select"
